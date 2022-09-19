@@ -1,7 +1,7 @@
 .wrapper {
+    display: flex;
     padding: 6px 16px;
     cursor: pointer;
-    display: flex;
     align-items: center;
 
     &:hover {
@@ -24,7 +24,7 @@
 .name {
     font-size: 1.6rem;
     font-weight: 500;
-    //fline-height: 1;
+    //line-height: 1;
 }
 
 .check {
