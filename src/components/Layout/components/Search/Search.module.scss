@@ -19,6 +19,7 @@
         height: 100%;
         caret-color: var(--primary);
         flex: 1;
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .search-btn {
@@ -75,6 +76,9 @@
 }
 
 .search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: var(--search-button-width);
     height: 100%;
     border-top-right-radius: var(--search-border-radius);

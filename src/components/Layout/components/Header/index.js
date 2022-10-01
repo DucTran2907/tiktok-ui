@@ -4,7 +4,9 @@ import { faEllipsisVertical, faEarthAsia, faUser, faCoins, faGear, faSignOut } f
 import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import images from '~/assets/images';
@@ -88,7 +90,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Logo Tiktok" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Logo Tiktok" />
+                </Link>
 
                 <Search />
 
@@ -130,7 +134,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-1/239792909_1942779312557070_2836847062644858454_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_ohc=xgNGCLcMW20AX_FXjAD&_nc_ht=scontent.fhan14-1.fna&oh=00_AT-Hs9cMiWMggjCh-tHCzBBYn11_9ChXVDI5GTFJxHmkEw&oe=632869EC"
+                                src="https://scontent.fhan2-1.fna.fbcdn.net/v/t39.30808-1/239792909_1942779312557070_2836847062644858454_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_ohc=1XtmWINogdgAX-Caadm&_nc_ht=scontent.fhan2-1.fna&oh=00_AT-4QAuApBsdDxlRtAsq_Eq60tpQjxWFGEncqhlXR0eDag&oe=633C306C"
                                 alt="Tran Minh Duc"
                                 //fallback="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-1/304901975_2438588142950859_5976710312603962989_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=JshdOMgdP0gAX_kXu_Q&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT97Is3grZfQCsdAEGhfjoRMrFaP2mDB2WSLNSEgOu6-Kw&oe=63256E52"
                             />

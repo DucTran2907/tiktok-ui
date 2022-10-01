@@ -24,6 +24,11 @@
     background-color: blue;
 }*/
 
+// Logo
+.logo-link {
+    display: flex;
+}
+
 // Actions
 .actions {
     display: flex;
@@ -44,6 +49,7 @@
 }
 
 .number-notification {
+    font-family: var(--font-family);
     display: flex;
     align-items: center;
     justify-content: center;

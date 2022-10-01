@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = function () {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItems = function () {
@@ -41,6 +41,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             interactive={true}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
             offset={[12, 8]}
             delay={[0, 700]}
             render={(attrs) => (

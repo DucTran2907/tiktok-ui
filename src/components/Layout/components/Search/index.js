@@ -31,7 +31,7 @@ function Search() {
                 setLoading(true);
                 const result = await searchServices.search(debounced);
                 setLoading(false);
-                console.log(result);
+                //console.log(result);
                 setSearchResult(result);
             };
 
@@ -48,6 +48,13 @@ function Search() {
 
     const handleHideResult = function () {
         setShowResult(false);
+    };
+
+    const handleChange = function (e) {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
     };
 
     return (
@@ -72,7 +79,7 @@ function Search() {
                     spellCheck={false}
                     value={searchValue}
                     ref={inputRef}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && !loading ? (
@@ -85,7 +92,7 @@ function Search() {
 
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>
