@@ -6,7 +6,6 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import styles from './Menu.module.scss';
-import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -22,7 +21,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 <MenuItem
                     key={index}
                     data={item}
-                    onChange={onChange}
+                    onChange={onchange}
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => {
@@ -57,7 +56,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
